@@ -1,0 +1,22 @@
+{
+  "name": "@littleq/spa-lite",
+  "version": "0.0.0",
+  "description": "Single-page-architecture that uses lite",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjmonsi/spa-lite.git"
+  },
+  "author": "TJ Monserrat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tjmonsi/spa-lite/issues"
+  },
+  "homepage": "https://github.com/tjmonsi/spa-lite#readme",
+  "dependencies": {
+    "@littleq/core-lite": "0.0.1-1"
+  }
+}
