@@ -1,1 +1,212 @@
-!function(e){function t(t){for(var i,a,r=t[0],o=t[1],s=0,l=[];s<r.length;s++)a=r[s],n[a]&&l.push(n[a][0]),n[a]=0;for(i in o)Object.prototype.hasOwnProperty.call(o,i)&&(e[i]=o[i]);for(h&&h(t);l.length;)l.shift()()}var i={},n={2:0};function a(t){if(i[t])return i[t].exports;var n=i[t]={i:t,l:!1,exports:{}};return e[t].call(n.exports,n,n.exports,a),n.l=!0,n.exports}a.e=function(e){var t=[],i=n[e];if(0!==i)if(i)t.push(i[2]);else{var r=new Promise(function(t,a){i=n[e]=[t,a]});t.push(i[2]=r);var o=document.getElementsByTagName("head")[0],s=document.createElement("script");s.charset="utf-8",s.timeout=12e4,a.nc&&s.setAttribute("nonce",a.nc),s.src=a.p+"module."+{0:"2f47315b3e1c4a5c6f5e",1:"c91b7873f6fa77f9d443"}[e]+".fragment.js";var h=setTimeout(function(){l({type:"timeout",target:s})},12e4);function l(t){s.onerror=s.onload=null,clearTimeout(h);var i=n[e];if(0!==i){if(i){var a=t&&("load"===t.type?"missing":t.type),r=t&&t.target&&t.target.src,o=new Error("Loading chunk "+e+" failed.\n("+a+": "+r+")");o.type=a,o.request=r,i[1](o)}n[e]=void 0}}s.onerror=s.onload=l,o.appendChild(s)}return Promise.all(t)},a.m=e,a.c=i,a.d=function(e,t,i){a.o(e,t)||Object.defineProperty(e,t,{configurable:!1,enumerable:!0,get:i})},a.r=function(e){Object.defineProperty(e,"__esModule",{value:!0})},a.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return a.d(t,"a",t),t},a.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},a.p="/",a.oe=function(e){throw console.error(e),e};var r=window.webpackJsonp=window.webpackJsonp||[],o=r.push.bind(r);r.push=t,r=r.slice();for(var s=0;s<r.length;s++)t(r[s]);var h=o;a(a.s=11)}([function(e,t,i){"use strict";Object.defineProperty(t,"__esModule",{value:!0});const n={"/":()=>Promise.all([i.e(0),i.e(1)]).then(function(){var e=i(12);return"object"==typeof e&&e&&e.__esModule?e:Object.assign({},"object"==typeof e&&e,{default:e})})};t.fragments=n},function(e,t,i){"use strict";class n extends window.HTMLElement{static get is(){return"template-container-lite"}constructor(){super(),this.__templateInitialized=!1,this.attachShadow({mode:"open"})}connectedCallback(){this.__templateInitialized||this.shadowRoot.appendChild(document.createElement("slot")),this.__templateInitialized=!0}setContent(e){for(;this.firstChild;)this.removeChild(this.firstChild);this.appendChild(e)}}window.customElements.get(n.is)?console.warn(`${n.is} is already defined somewhere. Please check your code.`):window.customElements.define(n.is,n)},function(e,t,i){"use strict";class n extends window.HTMLElement{static get is(){return"template-viewer-lite"}constructor(){super(),this.__data={},this.__templateInitialized=!1,this.attachShadow({mode:"open"})}connectedCallback(){this.__templateInitialized||this.shadowRoot.appendChild(document.createElement("slot")),this.__templateInitialized=!0,this._templateChanged(this.template||this.getAttribute("template"))}set template(e){this.__data.template=e,this.__templateInitialized&&this._templateChanged(e)}get template(){return this.__data.template}_closeTemplate(e){const t=this.querySelector("template-container-lite[active]");t?(t.setAttribute("closing",""),setTimeout(()=>{this.removeChild(t),this._openTemplate(e)},200)):this._openTemplate(e)}_openTemplate(e){const t=document.createElement("template-container-lite");t.setAttribute("active",""),t.setContent(e),this.appendChild(t)}_templateChanged(e){if(!e)return;const t=document.importNode(e.content,!0);this._closeTemplate(t)}}window.customElements.get(n.is)?console.warn(`${n.is} is already defined somewhere. Please check your code.`):window.customElements.define(n.is,n)},function(e,t,i){"use strict";class n extends window.HTMLElement{static get is(){return"template-loader-lite"}static get observedAttributes(){return["pattern","fallback-pattern"]}constructor(){super(),this.__data={},this.__patternInitialized=!1}connectedCallback(){this.fallbackPattern||(this.fallbackPattern="no-page"),this.hasAttribute("fallback-pattern")&&(this.__data.fallbackPattern=this.getAttribute("fallback-pattern")),this.__patternInitialized=!0,this.pattern&&this._patternChanged(this.pattern)}set pattern(e){console.log(e),this.__data.pattern=e,this.__patternInitialized&&this._patternChanged(e)}get pattern(){return this.__data.pattern}set fallbackPattern(e){this.__data.fallbackPattern=e,this.setAttribute("fallback-pattern",e)}get fallbackPattern(){return this.__data.fallbackPattern}_patternChanged(e){const t=this.querySelector(`template[pattern="${e}"]`);t?(this.template=t,Promise.resolve().then(()=>{this.dispatchEvent(new window.CustomEvent("template-change",{detail:this.template}))})):console.warn("There's no template available for pattern: ",e)}attributeChangedCallback(e,t,i){"fallback-pattern"===e&&this.__data.fallbackPattern!==i&&(this.__data.fallbackPattern=i),"pattern"===e&&this.__data.pattern!==i&&(this.__data.pattern=i)}}window.customElements.get(n.is)?console.warn(`${n.is} is already defined somewhere. Please check your code.`):window.customElements.define(n.is,n)},function(e,t,i){"use strict";class n extends window.HTMLElement{static get is(){return"route-data-lite"}set route(e){this.setAttribute("route",e)}get route(){return this.getAttribute("route")}}window.customElements.get(n.is)?console.warn(`${n.is} is already defined somewhere. Please check your code.`):window.customElements.define(n.is,n)},function(e,t,i){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n="/",a="./",r=new RegExp(["(\\\\.)","(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?"].join("|"),"g");function o(e,t){for(var i,o=[],s=0,d=0,c="",u=t&&t.delimiter||n,p=t&&t.delimiters||a,_=!1;null!==(i=r.exec(e));){var m=i[0],w=i[1],g=i.index;if(c+=e.slice(d,g),d=g+m.length,w)c+=w[1],_=!0;else{var f="",b=e[d],v=i[2],y=i[3],C=i[4],E=i[5];if(!_&&c.length){var R=c.length-1;p.indexOf(c[R])>-1&&(f=c[R],c=c.slice(0,R))}c&&(o.push(c),c="",_=!1);var q=""!==f&&void 0!==b&&b!==f,k="+"===E||"*"===E,P="?"===E||"*"===E,j=f||u,L=y||C;o.push({name:v||s++,prefix:f,delimiter:j,optional:P,repeat:k,partial:q,pattern:L?l(L):"[^"+h(j)+"]+?"})}}return(c||d<e.length)&&o.push(c+e.substr(d)),o}function s(e){for(var t=new Array(e.length),i=0;i<e.length;i++)"object"==typeof e[i]&&(t[i]=new RegExp("^(?:"+e[i].pattern+")$"));return function(i,n){for(var a="",r=n&&n.encode||encodeURIComponent,o=0;o<e.length;o++){var s=e[o];if("string"!=typeof s){var h,l=i?i[s.name]:void 0;if(Array.isArray(l)){if(!s.repeat)throw new TypeError('Expected "'+s.name+'" to not repeat, but got array');if(0===l.length){if(s.optional)continue;throw new TypeError('Expected "'+s.name+'" to not be empty')}for(var d=0;d<l.length;d++){if(h=r(l[d],s),!t[o].test(h))throw new TypeError('Expected all "'+s.name+'" to match "'+s.pattern+'"');a+=(0===d?s.prefix:s.delimiter)+h}}else if("string"!=typeof l&&"number"!=typeof l&&"boolean"!=typeof l){if(!s.optional)throw new TypeError('Expected "'+s.name+'" to be '+(s.repeat?"an array":"a string"));s.partial&&(a+=s.prefix)}else{if(h=r(String(l),s),!t[o].test(h))throw new TypeError('Expected "'+s.name+'" to match "'+s.pattern+'", but got "'+h+'"');a+=s.prefix+h}}else a+=s}return a}}function h(e){return e.replace(/([.+*?=^!:${}()[\]|/\\])/g,"\\$1")}function l(e){return e.replace(/([=!:$/()])/g,"\\$1")}function d(e){return e&&e.sensitive?"":"i"}function c(e,t,i){for(var r=(i=i||{}).strict,o=!1!==i.end,s=h(i.delimiter||n),l=i.delimiters||a,c=[].concat(i.endsWith||[]).map(h).concat("$").join("|"),u="",p=!1,_=0;_<e.length;_++){var m=e[_];if("string"==typeof m)u+=h(m),p=_===e.length-1&&l.indexOf(m[m.length-1])>-1;else{var w=h(m.prefix),g=m.repeat?"(?:"+m.pattern+")(?:"+w+"(?:"+m.pattern+"))*":m.pattern;t&&t.push(m),m.optional?m.partial?u+=w+"("+g+")?":u+="(?:"+w+"("+g+"))?":u+=w+"("+g+")"}}return o?(r||(u+="(?:"+s+")?"),u+="$"===c?"$":"(?="+c+")"):(r||(u+="(?:"+s+"(?="+c+"))?"),p||(u+="(?="+s+"|"+c+")")),new RegExp("^"+u,d(i))}function u(e,t,i){return e instanceof RegExp?function(e,t){if(!t)return e;var i=e.source.match(/\((?!\?)/g);if(i)for(var n=0;n<i.length;n++)t.push({name:n,prefix:null,delimiter:null,optional:!1,repeat:!1,partial:!1,pattern:null});return e}(e,t):Array.isArray(e)?function(e,t,i){for(var n=[],a=0;a<e.length;a++)n.push(u(e[a],t,i).source);return new RegExp("(?:"+n.join("|")+")",d(i))}(e,t,i):function(e,t,i){return c(o(e,i),t,i)}(e,t,i)}t.default=u,t.parse=o,t.compile=function(e,t){return s(o(e,t))},t.tokensToFunction=s,t.tokensToRegExp=c},function(e,t,i){"use strict";var n,a=i(5),r=(n=a)&&n.__esModule?n:{default:n};class o extends window.HTMLElement{static get is(){return"router-lite"}static get observedAttributes(){return["fallback-route"]}constructor(){super(),this.__data={},this.__routeInitialized=!1,this._boundChildrenChanged=this._childrenChanged.bind(this),this.routes=[]}connectedCallback(){if(this.fallbackRoute||(this.fallbackRoute="no-page"),this.children)for(let e of Array.from(this.children))this._getRoute(e);this._observer=new window.MutationObserver(this._boundChildrenChanged),this._observer.observe(this,{childList:!0}),this.hasAttribute("fallback-route")&&(this.__data.fallbackRoute=this.getAttribute("fallback-route")),this.__routeInitialized=!0,this._pathChanged(this.path)}disconnectedCallback(){this._observer&&this._observer.disconnect()}set currentRoute(e){this.__data.currentRoute=e,this.setAttribute("current-route",e)}get currentRoute(){return this.__data.currentRoute}set fallbackRoute(e){this.__data.fallbackRoute=e,this.setAttribute("fallback-route",e)}get fallbackRoute(){return this.__data.fallbackRoute}set path(e){this.__data.path=e,this.__routeInitialized&&this._pathChanged(e)}get path(){return this.__data.path}_childrenChanged(e){for(let t of e)if("childList"===t.type&&t.addedNodes)for(let e of Array.from(t.addedNodes))this._getRoute(e)}_getRoute(e){"route-data-lite"===e.nodeName.toLowerCase()?e.route&&"string"==typeof e.route&&e.route.trim()?this.routes.push(e.route):e.hasAttribute("route")&&"string"==typeof e.getAttribute("route")&&e.getAttribute("route").trim()?this.routes.push(e.getAttribute("route")):console.warn("There's no route information found in route-data ",e):console.warn("Only route-data-lite is allowed",e)}_pathChanged(e){if(!e)return;let t=null,i=null,n=[];for(let a of this.routes)if(n=[],t=(i=(0,r.default)(a,n)).exec(e))return this._routeMatched(a,t,n);return this._routeMatched(this.fallbackRoute,[],[])}_routeMatched(e,t,i){const n={};for(let e=0,a=i.length;e<a;e++){let a=i[e],{name:r}=a;n[r]=t[e+1]||null}this.routeParamObject=n,this.currentRoute=e,Promise.resolve().then(()=>{this.dispatchEvent(new window.CustomEvent("route-param-object-change",{detail:this.routeParamObject})),this.dispatchEvent(new window.CustomEvent("current-route-change",{detail:this.currentRoute}))})}attributeChangedCallback(e,t,i){"fallback-route"===e&&this.__data.fallbackRoute!==i&&(this.__data.fallbackRoute=i)}}window.customElements.get(o.is)?console.warn(`${o.is} is already defined somewhere. Please check your code.`):window.customElements.define(o.is,o)},function(e,t,i){"use strict";class n extends window.HTMLElement{static get is(){return"query-lite"}constructor(){super(),this.__data={}}set query(e){this.__data.query=e,this._queryChanged(e)}get query(){return this.__data.query}set queryObject(e){this.__data.queryObject=e,this._queryObjectChanged(e)}get queryObject(){return this.__data.queryObject}connectedCallback(){this.queryObject={},this._dontReact=!1}_queryChanged(e){this._dontReactQuery||(this._dontReact=!0,this.queryObject=this.decodeParams(e),Promise.resolve().then(()=>{this.dispatchEvent(new window.CustomEvent("query-object-change",{detail:this.queryObject}))}),this._dontReact=!1)}_queryObjectChanged(e){this._dontReact||(this._dontReactQuery=!0,this.query=this.encodeParams(e).replace(/%3F/g,"?").replace(/%2F/g,"/").replace(/'/g,"%27"),Promise.resolve().then(()=>{this.dispatchEvent(new window.CustomEvent("query-change",{detail:this.query}))}),this._dontReactQuery=!1)}encodeParams(e){var t=[];for(var i in e){var n=e[i];""===n?t.push(encodeURIComponent(i)):n&&t.push(`${encodeURIComponent(i)}=${encodeURIComponent(n.toString())}`)}return t.join("&")}decodeParams(e){const t={},i=(e=(e||"").replace(/\+/g,"%20")).split("&");for(let e=0;e<i.length;e++){let n=i[e].split("=");n[0]&&(t[decodeURIComponent(n[0])]=decodeURIComponent(n[1]||""))}return t}}window.customElements.get(n.is)?console.warn(`${n.is} is already defined somewhere. Please check your code.`):window.customElements.define(n.is,n)},function(e,t,i){"use strict";let n,a,r,o;Object.defineProperty(t,"__esModule",{value:!0});t.resolveUrl=((e,t)=>{if(void 0===n){n=!1;try{var i=new window.URL("b","http://a");i.pathname="c%20d",n=(n="http://a/c%20d"===i.href)&&"http://www.google.com/?foo%20bar"===new window.URL("http://www.google.com/?foo bar").href}catch(e){console.error(e)}}return n?new window.URL(e,t):(a||(a=document.implementation.createHTMLDocument("url"),r=a.createElement("base"),a.head.appendChild(r),o=a.createElement("a")),r.href=t,o.href=e.replace(/ /g,"%20"),o)})},function(e,t,i){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.LocationLite=void 0;var n=i(8);class a extends window.HTMLElement{static get is(){return"location-lite"}constructor(){super(),this.__data={},this.__dataInvalid=!1,this._boundHashChanged=this._hashChanged.bind(this),this._boundUrlChanged=this._urlChanged.bind(this),this._boundGlobalOnClick=this._globalOnClick.bind(this),this._urlSpaceRegExp=null,this.dwellTime=2e3}connectedCallback(){window.addEventListener("hashchange",this._boundHashChanged),window.addEventListener("location-change",this._boundUrlChanged),window.addEventListener("popstate",this._boundUrlChanged),document.body.addEventListener("click",this._boundGlobalOnClick,!0),window.performance&&(this._lastChangedAt=window.performance.now()-(this.dwellTime-200)),this._initialized=!0,this._urlChanged()}disconnectedCallback(){window.removeEventListener("hashchange",this._boundHashChanged),window.removeEventListener("location-change",this._boundUrlChanged),window.removeEventListener("popstate",this._boundUrlChanged),document.body.removeEventListener("click",this._boundGlobalOnClick),this._initialized=!1}set urlSpaceRegex(e){this.__data.urlSpaceRegex=e,this._urlSpaceRegExp=RegExp(e)}get urlSpaceRegex(){return this.__data.urlSpaceRegex}set path(e){this.__data.path!==e&&(this.__data.path=e,this._invalidateProperties())}get path(){return this.__data.path}set query(e){this.__data.query!==e&&(this.__data.query=e,this._invalidateProperties())}get query(){return this.__data.query}set hash(e){this.__data.hash!==e&&(this.__data.hash=e,this._invalidateProperties())}get hash(){return this.__data.hash}_invalidateProperties(){this.__dataInvalid||(this.__dataInvalid=!0,Promise.resolve().then(()=>{this.__dataInvalid&&(this.__dataInvalid=!1,this._updateUrl())}))}_hashChanged(){this.hash=window.decodeURIComponent(window.location.hash.slice(1)),Promise.resolve().then(()=>{this.dispatchEvent(new window.CustomEvent("hash-change",{detail:this.hash}))})}_urlChanged(){this._dontUpdateUrl=!0,this._hashChanged(),this.path=window.decodeURIComponent(window.location.pathname),this.query=window.location.search.slice(1),Promise.resolve().then(()=>{this.dispatchEvent(new window.CustomEvent("path-change",{detail:this.path})),this.dispatchEvent(new window.CustomEvent("query-change",{detail:this.query}))}),this._dontUpdateUrl=!1}_getUrl(){var e=window.encodeURI(this.path).replace(/\#/g,"%23").replace(/\?/g,"%3F"),t="";this.query&&(t="?"+this.query.replace(/\#/g,"%23"));var i="";return this.hash&&(i="#"+window.encodeURI(this.hash)),e+t+i}_updateUrl(){if(!this._dontUpdateUrl&&this._initialized&&(this.path!==window.decodeURIComponent(window.location.pathname)||this.query!==window.location.search.substring(1)||this.hash!==window.decodeURIComponent(window.location.hash.substring(1)))){var e=this._getUrl(),t=(0,n.resolveUrl)(e,window.location.protocol+"//"+window.location.host).href,i=window.performance?window.performance.now():null,a=this._lastChangedAt+this.dwellTime>i;this._lastChangedAt=i,a?window.history.replaceState({},"",t):window.history.pushState({},"",t),window.dispatchEvent(new window.CustomEvent("location-change"))}}_globalOnClick(e){if(!e.defaultPrevented){var t=this._getSameOriginLinkHref(e);t&&(e.preventDefault(),t!==window.location.href&&(window.history.pushState({},"",t),window.dispatchEvent(new window.CustomEvent("location-change"))))}}_getSameOriginLinkHref(e){if(0!==e.button)return null;if(e.metaKey||e.ctrlKey)return null;const t=e.composedPath();let i=null;for(var a=0;a<t.length;a++){var r=t[a];if("A"===r.tagName&&r.href){i=r;break}}if(!i)return null;if("_blank"===i.target)return i.href&&window.ga&&window.ga("send","event","Link","Click",i.href,1),null;if(("_top"===i.target||"_parent"===i.target)&&window.top!==window)return null;const o=i.href;let s,h,l;if(s=null!=document.baseURI?(0,n.resolveUrl)(o,document.baseURI):(0,n.resolveUrl)(o),h=window.location.origin?window.location.origin:window.location.protocol+"//"+window.location.host,(l=s.origin?s.origin:s.protocol+"//"+s.host)!==h)return null;var d=s.pathname+s.search+s.hash;return"/"!==d[0]&&(d="/"+d),this._urlSpaceRegExp&&!this._urlSpaceRegExp.test(d)?null:(0,n.resolveUrl)(d,window.location.href).href}}t.LocationLite=a,window.customElements.get(a.is)?console.warn(`${a.is} is already defined somewhere. Please check your code.`):window.customElements.define(a.is,a)},function(e,t,i){"use strict";i(9),i(7),i(6),i(4),i(3),i(2),i(1);class n extends window.HTMLElement{static get is(){return"core-lite"}constructor(){super(),this.__initialized=!1,this._location=document.createElement("location-lite"),this._query=document.createElement("query-lite"),this._viewer=document.createElement("template-viewer-lite"),this._router=null,this._loader=null,this._boundPathChanged=this._pathChanged.bind(this),this._boundQueryChanged=this._queryChanged.bind(this),this._boundHashChanged=this._hashChanged.bind(this),this._boundQueryObjectChanged=this._queryObjectChanged.bind(this),this._boundRouterParamObjectChanged=this._routerParamObjectChanged.bind(this),this._boundCurrentRouteChanged=this._currentRouteChanged.bind(this),this._boundTemplateChanged=this._templateChanged.bind(this),this.attachShadow({mode:"open"})}connectedCallback(){this.__initialized||(this._router=this.querySelector("router-lite"),this._loader=this.querySelector("template-loader-lite"),this._router||(this._router=document.createElement("router-lite"),this.appendChild(this._router)),this._loader||(this._loader=document.createElement("template-loader-lite"),this.appendChild(this._loader)),this._location&&(this._location.addEventListener("path-change",this._boundPathChanged),this._location.addEventListener("query-change",this._boundQueryChanged),this._location.addEventListener("hash-change",this._boundHashChanged),this.shadowRoot.appendChild(this._location)),this._query&&(this._query.addEventListener("query-change",this._boundQueryChanged),this._query.addEventListener("query-object-change",this._boundQueryObjectChanged),this.shadowRoot.appendChild(this._query)),this._router&&(this._router.addEventListener("router-param-object-change",this._boundRouterParamObjectChanged),this._router.addEventListener("current-route-change",this._boundCurrentRouteChanged)),this._loader&&this._loader.addEventListener("template-change",this._boundTemplateChanged),this._viewer&&this.shadowRoot.appendChild(this._viewer),this.shadowRoot.appendChild(document.createElement("slot"))),this.__initialized=this._location&&this._query&&this._router&&this._loader&&this._viewer&&!0}disconnectedCallback(){this._location&&(this._location.removeEventListener("path-change",this._boundPathChanged),this._location.removeEventListener("query-change",this._boundQueryChanged),this._location.removeEventListener("hash-change",this._boundHashChanged)),this._query&&(this._query.removeEventListener("query-change",this._boundQueryChanged),this._query.removeEventListener("query-object-change",this._boundQueryObjectChanged)),this._router&&(this._router.removeEventListener("router-param-object-change",this._boundRouterParamObjectChanged),this._router.removeEventListener("current-route-change",this._boundCurrentRouteChanged)),this._loader&&this._loader.removeEventListener("template-change",this._boundTemplateChanged)}_pathChanged(e){if(this.__initialized){const{detail:t}=e;this._router.path=t,e.preventDefault(),e.stopPropagation(),this.path=t,this._dispatchEvent("path",this.path)}else console.warn("core-lite is not initialized")}_queryChanged(e){if(this.__initialized){const{detail:t}=e;this._query.query!==t&&(this._query.query=t),this._location.query!==t&&(this._location.query=t),e.preventDefault(),e.stopPropagation(),this.query=t,this._dispatchEvent("query",this.query)}else console.warn("core-lite is not initialized")}_hashChanged(e){if(this.__initialized){const{detail:t}=e;e.preventDefault(),e.stopPropagation(),this.hash=t,this._dispatchEvent("hash",this.hash)}else console.warn("core-lite is not initialized")}_queryObjectChanged(e){if(this.__initialized){const{detail:t}=e;e.preventDefault(),e.stopPropagation(),this.queryObject=t,this._dispatchEvent("query-object",this.queryObject)}else console.warn("core-lite is not initialized")}_routerParamObjectChanged(e){if(this.__initialized){const{detail:t}=e;e.preventDefault(),e.stopPropagation(),this.routerParamObject=t,this._dispatchEvent("router-param-object",this.routerParamObject)}else console.warn("core-lite is not initialized")}_currentRouteChanged(e){if(this.__initialized){const{detail:t}=e;this._loader.pattern=t,e.preventDefault(),e.stopPropagation(),this.currentRoute=t,this._dispatchEvent("current-route",this.currentRoute)}else console.warn("core-lite is not initialized")}_templateChanged(e){if(this.__initialized){const{detail:t}=e;this._viewer.template=t,e.preventDefault(),e.stopPropagation(),this.template=t,this._dispatchEvent("template",this.template)}else console.warn("core-lite is not initialized")}_dispatchEvent(e,t){this.dispatchEvent(new window.CustomEvent(`${e}-change`,{detail:t}))}}window.customElements.get(n.is)?console.warn(`${n.is} is already defined somewhere. Please check your code.`):window.customElements.define(n.is,n)},function(e,t,i){"use strict";let n=(r=function*(e){try{console.log(e),e&&"function"==typeof e?yield e():yield Promise.reject(new Error("No fragment found"))}catch(e){console.log(e)}},a=function(){var e=r.apply(this,arguments);return new Promise(function(t,i){return function n(a,r){try{var o=e[a](r),s=o.value}catch(e){return void i(e)}if(!o.done)return Promise.resolve(s).then(function(e){n("next",e)},function(e){n("throw",e)});t(s)}("next")})},function(e){return a.apply(this,arguments)});var a,r;i(10);var o=i(0);document.querySelector("core-lite").addEventListener("current-route-change",({detail:e})=>n(o.fragments[e]))}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	function webpackJsonpCallback(data) {
+/******/ 		var chunkIds = data[0];
+/******/ 		var moreModules = data[1]
+/******/
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, resolves = [];
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(installedChunks[chunkId]) {
+/******/ 				resolves.push(installedChunks[chunkId][0]);
+/******/ 			}
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
+/******/ 		while(resolves.length) {
+/******/ 			resolves.shift()();
+/******/ 		}
+/******/
+/******/ 	};
+/******/
+/******/
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// object to store loaded and loading chunks
+/******/ 	var installedChunks = {
+/******/ 		"core": 0
+/******/ 	};
+/******/
+/******/
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/ 	// This file contains only the entry chunk.
+/******/ 	// The chunk loading function for additional chunks
+/******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
+/******/ 		var promises = [];
+/******/
+/******/
+/******/ 		// JSONP chunk loading for javascript
+/******/
+/******/ 		var installedChunkData = installedChunks[chunkId];
+/******/ 		if(installedChunkData !== 0) { // 0 means "already installed".
+/******/
+/******/ 			// a Promise means "currently loading".
+/******/ 			if(installedChunkData) {
+/******/ 				promises.push(installedChunkData[2]);
+/******/ 			} else {
+/******/ 				// setup Promise in chunk cache
+/******/ 				var promise = new Promise(function(resolve, reject) {
+/******/ 					installedChunkData = installedChunks[chunkId] = [resolve, reject];
+/******/ 				});
+/******/ 				promises.push(installedChunkData[2] = promise);
+/******/
+/******/ 				// start chunk loading
+/******/ 				var head = document.getElementsByTagName('head')[0];
+/******/ 				var script = document.createElement('script');
+/******/
+/******/ 				script.charset = 'utf-8';
+/******/ 				script.timeout = 120000;
+/******/
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 				script.src = __webpack_require__.p + "module." + {"vendors~page-home":"de8f9ecd7bd1fbf0170b"}[chunkId] + ".fragment.js";
+/******/ 				var timeout = setTimeout(function(){
+/******/ 					onScriptComplete({ type: 'timeout', target: script });
+/******/ 				}, 120000);
+/******/ 				script.onerror = script.onload = onScriptComplete;
+/******/ 				function onScriptComplete(event) {
+/******/ 					// avoid mem leaks in IE.
+/******/ 					script.onerror = script.onload = null;
+/******/ 					clearTimeout(timeout);
+/******/ 					var chunk = installedChunks[chunkId];
+/******/ 					if(chunk !== 0) {
+/******/ 						if(chunk) {
+/******/ 							var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 							var realSrc = event && event.target && event.target.src;
+/******/ 							var error = new Error('Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')');
+/******/ 							error.type = errorType;
+/******/ 							error.request = realSrc;
+/******/ 							chunk[1](error);
+/******/ 						}
+/******/ 						installedChunks[chunkId] = undefined;
+/******/ 					}
+/******/ 				};
+/******/ 				head.appendChild(script);
+/******/ 			}
+/******/ 		}
+/******/ 		return Promise.all(promises);
+/******/ 	};
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/ 	// on error function for async loading
+/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
+/******/
+/******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
+/******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
+/******/ 	jsonpArray.push = webpackJsonpCallback;
+/******/ 	jsonpArray = jsonpArray.slice();
+/******/ 	for(var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
+/******/ 	var parentJsonpFunction = oldJsonpFunction;
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./config/fragments.js":
+/*!*****************************!*\
+  !*** ./config/fragments.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nconst fragments = {\n  '/': () => __webpack_require__.e(/*! import() | page-home */ \"vendors~page-home\").then(function() { var module = __webpack_require__(/*! ../src/pages/page-home/index.js */ \"./src/pages/page-home/index.js\"); return typeof module === \"object\" && module && module.__esModule ? module : Object.assign({/* fake namespace object */}, typeof module === \"object\" && module, { \"default\": module }); })\n};\nexports.fragments = fragments;\n\n//# sourceURL=webpack:///./config/fragments.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@littleq/core-lite/core-lite.js":
+/*!******************************************************!*\
+  !*** ./node_modules/@littleq/core-lite/core-lite.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module build failed: Error: ENOENT: no such file or directory, open '/home/ubuntu/workspace/spa-lite/node_modules/@littleq/core-lite/core-lite.js'\");\n\n//# sourceURL=webpack:///./node_modules/@littleq/core-lite/core-lite.js?");
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nlet lazyLoad = (() => {\n  var _ref = _asyncToGenerator(function* (fragment) {\n    try {\n      console.log(fragment);\n      if (fragment && typeof fragment === 'function') {\n        yield fragment();\n      } else {\n        yield Promise.reject(new Error('No fragment found'));\n      }\n    } catch (error) {\n      console.log(error);\n    }\n  });\n\n  return function lazyLoad(_x) {\n    return _ref.apply(this, arguments);\n  };\n})();\n\n__webpack_require__(/*! @littleq/core-lite */ \"./node_modules/@littleq/core-lite/core-lite.js\");\n\nvar _fragments = __webpack_require__(/*! ../config/fragments.js */ \"./config/fragments.js\");\n\nfunction _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step(\"next\", value); }, function (err) { step(\"throw\", err); }); } } return step(\"next\"); }); }; }\n\nconst core = document.querySelector('core-lite');\nconst handleRequest = ({ detail: pattern }) => lazyLoad(_fragments.fragments[pattern]);\ncore.addEventListener('current-route-change', handleRequest);\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ })
+
+/******/ });

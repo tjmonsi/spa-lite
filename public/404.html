@@ -1,51 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="generator" content="SPA Lite">
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>SPA Lite</title>
-<meta name="description" content="This is a test">
-<meta property="og:title" content="SPA Lite">
-<meta property="og:type" content="website">
-<meta property="og:image" content="">
-<meta property="og:description" content="This is a test">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="">
-<meta name="twitter:creator" content="">
-<meta name="twitter:title" content="SPA Lite">
-<meta name="twitter:description" content="This is a test">
-<meta name="twitter:image" content="">
-<base href="">
-<link rel="icon" href="images/favicon.ico">
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="">
-<meta name="mobile-web-app-capable" content="">
-<meta name="application-name" content="SPA Lite">
-<meta name="apple-mobile-web-app-capable" content="">
-<meta name="apple-mobile-web-app-status-bar-style" content="">
-<meta name="apple-mobile-web-app-title" content="SPA Lite">
-<meta name="msapplication-TileColor" content="">
-<meta name="msapplication-tap-highlight" content="">
-<style>*{-webkit-box-sizing:border-box;box-sizing:border-box}body{margin:0;padding:0}</style>
-</head>
-<body>
-<core-lite>
-<router-lite>
-<route-data-lite route="/"></route-data-lite>
-</router-lite>
-<template-loader-lite>
-<template pattern="/">
-<page-home></page-home>
-</template>
-</template-loader-lite>
-</core-lite>
-<script>!function(e,t,r){var i=[],o={_version:"3.5.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,t){var r=this;setTimeout(function(){t(r[e])},0)},addTest:function(e,t,r){i.push({name:e,fn:t,options:r})},addAsyncTest:function(e){i.push({name:null,fn:e})}},p=function(){};p.prototype=o,(p=new p).addTest("es5array",function(){return!!(Array.prototype&&Array.prototype.every&&Array.prototype.filter&&Array.prototype.forEach&&Array.prototype.indexOf&&Array.prototype.lastIndexOf&&Array.prototype.map&&Array.prototype.some&&Array.prototype.reduce&&Array.prototype.reduceRight&&Array.isArray)}),p.addTest("es5date",function(){var e=!1;try{e=!!Date.parse("2013-04-12T06:06:37.307Z")}catch(e){}return!!(Date.now&&Date.prototype&&Date.prototype.toISOString&&Date.prototype.toJSON&&e)}),p.addTest("es5function",function(){return!(!Function.prototype||!Function.prototype.bind)}),p.addTest("es5object",function(){return!!(Object.keys&&Object.create&&Object.getPrototypeOf&&Object.getOwnPropertyNames&&Object.isSealed&&Object.isFrozen&&Object.isExtensible&&Object.getOwnPropertyDescriptor&&Object.defineProperty&&Object.defineProperties&&Object.seal&&Object.freeze&&Object.preventExtensions)}),p.addTest("es5string",function(){return!(!String.prototype||!String.prototype.trim)}),p.addTest("es6array",!!(Array.prototype&&Array.prototype.copyWithin&&Array.prototype.fill&&Array.prototype.find&&Array.prototype.findIndex&&Array.prototype.keys&&Array.prototype.entries&&Array.prototype.values&&Array.from&&Array.of)),p.addTest("es6collections",!!(e.Map&&e.Set&&e.WeakMap&&e.WeakSet)),p.addTest("es6math",!!(Math&&Math.clz32&&Math.cbrt&&Math.imul&&Math.sign&&Math.log10&&Math.log2&&Math.log1p&&Math.expm1&&Math.cosh&&Math.sinh&&Math.tanh&&Math.acosh&&Math.asinh&&Math.atanh&&Math.hypot&&Math.trunc&&Math.fround)),p.addTest("es6number",!!(Number.isFinite&&Number.isInteger&&Number.isSafeInteger&&Number.isNaN&&Number.parseInt&&Number.parseFloat&&Number.isInteger(Number.MAX_SAFE_INTEGER)&&Number.isInteger(Number.MIN_SAFE_INTEGER)&&Number.isFinite(Number.EPSILON))),p.addTest("es6object",!!(Object.assign&&Object.is&&Object.setPrototypeOf)),p.addTest("promises",function(){return"Promise"in e&&"resolve"in e.Promise&&"reject"in e.Promise&&"all"in e.Promise&&"race"in e.Promise&&(new e.Promise(function(e){t=e}),"function"==typeof t);var t}),p.addTest("es6string",!!(String.fromCodePoint&&String.raw&&String.prototype.codePointAt&&String.prototype.repeat&&String.prototype.startsWith&&String.prototype.endsWith&&String.prototype.includes));var c=[];(function(){var e,t,r,o,n,s;for(var a in i)if(i.hasOwnProperty(a)){if(e=[],(t=i[a]).name&&(e.push(t.name.toLowerCase()),t.options&&t.options.aliases&&t.options.aliases.length))for(r=0;r<t.options.aliases.length;r++)e.push(t.options.aliases[r].toLowerCase());for(o="function"==typeof t.fn?t.fn():t.fn,n=0;n<e.length;n++)1===(s=e[n].split(".")).length?p[s[0]]=o:(!p[s[0]]||p[s[0]]instanceof Boolean||(p[s[0]]=new Boolean(p[s[0]])),p[s[0]][s[1]]=o),c.push((o?"":"no-")+s.join("-"))}})(),delete o.addTest,delete o.addAsyncTest;for(var n=0;n<p._q.length;n++)p._q[n]();e.Modernizr=p}(window,document),function(){var e=document.body.getElementsByTagName("script")[0]||document.body.getElementsByTagName("style")[0];if(!(Modernizr.es5array&&Modernizr.es5date&&Modernizr.es5function&&Modernizr.es5object&&Modernizr.es5string)){var t=document.createElement("script");t.src="/vendor/es5-shim.js";var r=document.createElement("script");r.src="/vendor/es5-sham.js",e.parentNode.insertBefore(t,e),e.parentNode.insertBefore(r,e)}if(!(Modernizr.es6collections&&Modernizr.es6math&&Modernizr.es6number&&Modernizr.es6object&&Modernizr.es6string)){var o=document.createElement("script");o.src="/vendor/es6-shim.js";var n=document.createElement("script");n.src="/vendor/es6-sham.js",e.parentNode.insertBefore(o,e),e.parentNode.insertBefore(n,e)}if(!Modernizr.promises){var s=document.createElement("script");s.src="/vendor/es6-promise.js",e.parentNode.insertBefore(s,e)}if(!window.IntersectionObserver){var a=document.createElement("script");a.src="/vendor/intersection-observer.js",e.parentNode.insertBefore(a,e)}if(!("attachShadow"in Element.prototype&&"getRootNode"in Element.prototype)||window.ShadyDOM&&window.ShadyDOM.force){var i=document.createElement("script");i.src="/vendor/scoping-shim.js",e.parentNode.insertBefore(i,e)}if(!window.fetch||!window.Headers){var p=document.createElement("script");p.src="/vendor/fetch.js",e.parentNode.insertBefore(p,e)}window.onerror=function(t,e,r){try{window.ga&&ga("send","exception",{exDescription:t.message,exFatal:!0})}catch(e){console.error(t),console.error(e)}}}()</script>
-<div id="ce-es5-shim">
-<script type="text/javascript">if(!window.customElements){var ceShimContainer=document.querySelector("#ce-es5-shim");ceShimContainer.parentElement.removeChild(ceShimContainer)}</script>
-<script type="text/javascript" src="vendor/custom-elements-es5-adapter.js" async nomodule></script>
-</div>
-<script>document.addEventListener("WebComponentsReady",function e(){document.removeEventListener("WebComponentsReady",e,!1);var t=document.createElement("script");t.async=!0,t.src="/core.js",t.setAttribute("nomodule",!0);var n=document.createElement("script");n.async=!0,n.src="/module.core.js",n.setAttribute("type","module");var r=document.body.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r),r.parentNode.insertBefore(n,r)},!1)</script>
-<script>!function(){"use strict";window.WebComponents=window.WebComponents||{};var e=[];if("import"in document.createElement("link")||e.push("hi"),(!("attachShadow"in Element.prototype&&"getRootNode"in Element.prototype)||window.ShadyDOM&&window.ShadyDOM.force)&&e.push("sd"),window.customElements&&!window.customElements.forcePolyfill||e.push("ce"),"content"in document.createElement("template")&&window.Promise&&Array.from&&document.createDocumentFragment().cloneNode()instanceof DocumentFragment||(e=["lite"]),e.length){var t=document.createElement("script");t.src="/vendor/webcomponents-loader.js";var n=document.createElement("script"),o="webcomponents-"+e.join("-")+".js",c=t.src.replace("webcomponents-loader.js",o);n.src=c,"loading"===document.readyState&&"import"in document.createElement("link")?document.write(n.outerHTML):document.head.appendChild(n)}else{var d=function(){requestAnimationFrame(function(){window.WebComponents.ready=!0,document.dispatchEvent(new CustomEvent("WebComponentsReady",{bubbles:!0}))})};"loading"!==document.readyState?d():document.addEventListener("readystatechange",function e(){d(),document.removeEventListener("readystatechange",e)})}}()</script>
-</body>
-</html>
+Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Module build failed: Error: ENOENT: no such file or directory, open '/home/  ubuntu/workspace/spa-lite/node_modules/css-loader/lib/css-base.js':
+  Error: ENOENT: no such file or directory, open '/home/ubuntu/workspace/spa-  lite/node_modules/css-loader/lib/css-base.js'
+  Module build failed: Error: ENOENT: no such file or directory, open '/home/  ubuntu/workspace/spa-lite/node_modules/lodash/lodash.js':
+  Error: ENOENT: no such file or directory, open '/home/ubuntu/workspace/spa-  lite/node_modules/lodash/lodash.js'
+  
+  - compiler.js:73 childCompiler.runAsChild
+    [spa-lite]/[html-webpack-plugin]/lib/compiler.js:73:16
+  
+  - Compiler.js:222 compile
+    [spa-lite]/[webpack]/lib/Compiler.js:222:11
+  
+  - Compiler.js:470 hooks.afterCompile.callAsync.err
+    [spa-lite]/[webpack]/lib/Compiler.js:470:14
+  
+  
+  - Hook.js:35 AsyncSeriesHook.lazyCompileHook [as _callAsync]
+    [spa-lite]/[tapable]/lib/Hook.js:35:21
+  
+  - Compiler.js:467 compilation.seal.err
+    [spa-lite]/[webpack]/lib/Compiler.js:467:30
+  
+  
+  - Hook.js:35 AsyncSeriesHook.lazyCompileHook [as _callAsync]
+    [spa-lite]/[tapable]/lib/Hook.js:35:21
+  
+  - Compilation.js:957 hooks.optimizeAssets.callAsync.err
+    [spa-lite]/[webpack]/lib/Compilation.js:957:35
+  
+  
+  - Hook.js:35 AsyncSeriesHook.lazyCompileHook [as _callAsync]
+    [spa-lite]/[tapable]/lib/Hook.js:35:21
+  
+  - Compilation.js:948 hooks.optimizeChunkAssets.callAsync.err
+    [spa-lite]/[webpack]/lib/Compilation.js:948:32
+  
+  
+  - Hook.js:35 AsyncSeriesHook.lazyCompileHook [as _callAsync]
+    [spa-lite]/[tapable]/lib/Hook.js:35:21
+  
+  - Compilation.js:943 hooks.additionalAssets.callAsync.err
+    [spa-lite]/[webpack]/lib/Compilation.js:943:36
+  
+  
+  - Hook.js:35 AsyncSeriesHook.lazyCompileHook [as _callAsync]
+    [spa-lite]/[tapable]/lib/Hook.js:35:21
+  
+  - Compilation.js:939 hooks.optimizeTree.callAsync.err
+    [spa-lite]/[webpack]/lib/Compilation.js:939:32
+  
+  
+  - Hook.js:35 AsyncSeriesHook.lazyCompileHook [as _callAsync]
+    [spa-lite]/[tapable]/lib/Hook.js:35:21
+  
+  - Compilation.js:881 Compilation.seal
+    [spa-lite]/[webpack]/lib/Compilation.js:881:27
+  
+  - Compiler.js:464 hooks.make.callAsync.err
+    [spa-lite]/[webpack]/lib/Compiler.js:464:17
+  
+  
+  - Compilation.js:749 _addModuleChain
+    [spa-lite]/[webpack]/lib/Compilation.js:749:12
+  
+  - Compilation.js:688 processModuleDependencies.err
+    [spa-lite]/[webpack]/lib/Compilation.js:688:9
+  
+  - next_tick.js:131 _combinedTickCallback
+    internal/process/next_tick.js:131:7
+  
+  - next_tick.js:180 process._tickCallback
+    internal/process/next_tick.js:180:9
+  
+</pre>
