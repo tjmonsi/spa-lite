@@ -1,0 +1,4 @@
+{
+  "page-home": "src/pages/page-home/index.js",
+  "page-not-found": "src/pages/page-not-found/index.js"
+}

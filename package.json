@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/tjmonsi/spa-lite#readme",
   "dependencies": {
-    "@littleq/core-lite": "0.0.3",
+    "@littleq/core-lite": "0.0.4",
     "@littleq/element-lite": "^0.1.8",
     "@webcomponents/shadycss": "^1.1.1",
     "@webcomponents/webcomponentsjs": "^1.1.0",
