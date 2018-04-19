@@ -1,8 +1,18 @@
 import '@littleq/core-lite';
 import { fragments } from './utils/fragments.js';
+import { updateState } from './utils/ui-state.js';
 const core = document.querySelector('core-lite');
-const handleRequest = ({ detail: pattern }) => lazyLoad(fragments[pattern]);
-core.addEventListener('current-route-change', handleRequest);
+core.addEventListener('current-route-change', currentRouteChanged);
+core.addEventListener('route-param-object-change', routeParamObjectChanged);
+
+function currentRouteChanged ({ detail: route }) {
+  lazyLoad(fragments[route]);
+  updateState('currentRoute', route);
+}
+
+function routeParamObjectChanged ({ detail: params }) {
+  updateState('routeParamObject', params);
+}
 
 async function lazyLoad (fragment) {
   try {

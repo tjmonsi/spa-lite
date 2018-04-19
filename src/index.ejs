@@ -65,10 +65,14 @@
     <core-lite>
       <router-lite>
         <route-data-lite route="/"></route-data-lite>
+        <route-data-lite route="/page/:id"></route-data-lite>
       </router-lite>
       <template-loader-lite>
         <template pattern="/">
           <page-home></page-home>
+        </template>
+        <template pattern="/page/:id">
+          <page-params></page-params>
         </template>
       </template-loader-lite>
     </core-lite>

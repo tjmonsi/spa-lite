@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{12:function(e,n,s){"use strict";var t=s(13);const{HTMLElement:o,customElements:i}=window;class r extends((0,t.ElementLiteLitOnly)(o)){static get is(){return"page-home"}render(){return t.html`Hello World`}}i.get(r.is)?console.warn(`${r.is} is already defined somewhere. Please check your code.`):i.define(r.is,r)}}]);
