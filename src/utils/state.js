@@ -26,17 +26,32 @@ async function dispatch (path, value) {
   }
 }
 
+const getState = () => new Promise(resolve => {
+  const getStateFromWorker = ({ data }) => {
+    const { action, value } = data;
+    if (action === 'get-state') {
+      resolve(value);
+      worker.removeEventListener('message', getStateFromWorker);
+    }
+  }
+  worker.postMessage({
+    action: 'get-state'
+  });
+  worker.addEventListener('message', getStateFromWorker);
+});
+
+
 function updateState (path, value) {
   worker.postMessage({
-    action: 'state-change',
+    action: 'change-state',
     path,
     value
   });
 }
 
 worker.addEventListener('message', ({ data }) => {
-  const { action } = data;
-  if (action === 'state-change') return dispatch(data.path, data.value);
+  const { action, path, value } = data;
+  if (action === 'change-state') return dispatch(path, value);
 });
 
-export { subscribe, unsubscribe, dispatch, updateState };
+export { subscribe, unsubscribe, dispatch, updateState, getState };

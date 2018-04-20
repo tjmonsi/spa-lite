@@ -1,4 +1,5 @@
 const { resolve } = require('path');
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
@@ -65,9 +66,10 @@ const shared = env => {
     },
     output: {
       path: resolve(__dirname, 'public'),
-      chunkFilename: IS_MODULE_BUILD ? 'module.[chunkhash].fragment.js' : '[chunkhash].fragment.js',
+      chunkFilename: IS_MODULE_BUILD ? 'module.[id].fragment.js' : '[id].fragment.js',
       filename: IS_MODULE_BUILD ? 'module.[name].js' : '[name].js',
-      publicPath: '/'
+      publicPath: '/',
+      globalObject: 'self'
     },
     resolve: {
       extensions: ['.js', '.styl']
@@ -84,9 +86,11 @@ const shared = env => {
         {
           test: /\.worker\.js$/,
           use: [
-            
             { 
-              loader: 'worker-loader' 
+              loader: 'worker-loader',
+              options: {
+                name: 'worker.[id].js'
+              }
             },
             {
               loader: 'babel-loader',

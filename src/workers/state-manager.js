@@ -9,7 +9,7 @@ const reducer = (path, state = {}, value) => {
 
 const stateManager = (data) => {
   const { action } = data;
-  if (action === 'state-change') {
+  if (action === 'change-state') {
     const { path, value } = data;
     currentState = reducer(path, currentState, value);
     if (stateTimeline.length >= 1000) {
@@ -17,9 +17,22 @@ const stateManager = (data) => {
     }
     stateTimeline.unshift(currentState);
     global.postMessage({ action, path, value });
-  } else if (data.action === 'get-state') {
+  } else if (action === 'get-state') {
+    console.log(action)
     global.postMessage({ action, value: currentState });
   }
 };
 
-export { stateManager };
+const updateState = (path, value) => {
+  stateManager({
+    action: 'change-state',
+    path,
+    value
+  });
+};
+
+global.addEventListener('message', ({ data }) => {
+  stateManager(data);
+});
+
+export { updateState, currentState };

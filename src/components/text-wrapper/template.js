@@ -1,5 +1,4 @@
 import { html } from '@littleq/element-lite';
-import { repeat } from '@littleq/element-lite/lib/lit-html/lib/repeat.js'
 
 const template = (self) => html`
   <span>
@@ -8,7 +7,7 @@ const template = (self) => html`
   
   <ul>
     ${self.list.map(item => 
-      html`<li>Hey ${item}</li>`
+      html`<li>${item}</li>`
     )}
   </ul>
   

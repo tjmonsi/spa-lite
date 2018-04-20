@@ -1,5 +1,5 @@
 import { ElementLite, html } from '@littleq/element-lite';
-import { subscribe, unsubscribe, updateState } from '../../utils/ui-state.js';
+import { subscribe, unsubscribe, updateState, getState } from '../../utils/state.js';
 const { HTMLElement, customElements } = window;
 
 class SmartComponent extends ElementLite(HTMLElement) {
@@ -78,6 +78,7 @@ class SmartComponent extends ElementLite(HTMLElement) {
   _listChanged (list) {
     this.list = list;
     this.querySelector('text-wrapper').list = list;
+    getState().then(value => console.log(value))
   }
 }
 
