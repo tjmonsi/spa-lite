@@ -1,4 +1,4 @@
-import { ElementLite, html } from '@littleq/element-lite';
+import { ElementLite, html } from '@littleq/element-lite/element-lite.js';
 import { subscribe, unsubscribe, updateState } from '../../utils/ui-state.js';
 const { HTMLElement, customElements } = window;
 
@@ -21,7 +21,7 @@ class SmartComponent extends ElementLite(HTMLElement) {
         type: Array,
         value: []
       }
-    }
+    };
   }
 
   constructor () {
@@ -37,7 +37,7 @@ class SmartComponent extends ElementLite(HTMLElement) {
     this._textChanged(this.text);
     this.querySelector('text-wrapper').addEventListener('text-wrapper-event', this._boundTextWrapperChanged)
     subscribe('currentRoute', this._boundRouteChanged);
-    subscribe('routeParamObject',  this._boundRouteParamObjectChanged);
+    subscribe('routeParamObject', this._boundRouteParamObjectChanged);
     subscribe('list', this._boundListChanged);
   }
 
@@ -64,7 +64,7 @@ class SmartComponent extends ElementLite(HTMLElement) {
   }
 
   _routeChanged (value) {
-    this.text = '/' === value ? 'Home' : 'Elsewhere';
+    this.text = value === '/' ? 'Home' : 'Elsewhere';
   }
 
   _routeParamObjectChanged (params) {

@@ -1,7 +1,7 @@
-import { ElementLite, html } from '@littleq/element-lite';
+import { ElementLite, html } from '@littleq/element-lite/element-lite.js';
 import { template } from './template.js';
 import style from './style.styl';
-const { HTMLElement, customElements } = window;
+const { HTMLElement, customElements, CustomEvent } = window;
 
 class Component extends ElementLite(HTMLElement) {
   static get is () { return 'text-wrapper'; }
@@ -22,7 +22,7 @@ class Component extends ElementLite(HTMLElement) {
           'initial'
         ]
       }
-    }
+    };
   }
 
   render () {
@@ -30,7 +30,7 @@ class Component extends ElementLite(HTMLElement) {
   }
 
   buttonClicked ({ detail, target }) {
-    this.dispatchEvent(new window.CustomEvent('text-wrapper-event', { detail: { ...detail, string: target.getAttribute('string') } }));
+    this.dispatchEvent(new CustomEvent('text-wrapper-event', { detail: { ...detail, string: target.getAttribute('string') } }));
   }
 }
 

@@ -1,4 +1,4 @@
-import { html } from '@littleq/element-lite';
+import { html } from '@littleq/element-lite/element-lite.js';
 import '../../components/text-wrapper/index.js';
 import '../../components/smart-text-wrapper/index.js';
 
