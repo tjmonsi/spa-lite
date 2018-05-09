@@ -1,4 +1,4 @@
-import { html } from '@littleq/element-lite/element-lite.js';
+import { html } from '@littleq/element-lite';
 
 const template = (self) => html`
   <span>

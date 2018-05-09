@@ -1,4 +1,4 @@
-import { ElementLite, html } from '@littleq/element-lite/element-lite.js';
+import { ElementLite, html } from '@littleq/element-lite';
 import { subscribe, unsubscribe, updateState } from '../../utils/ui-state.js';
 const { HTMLElement, customElements } = window;
 
@@ -35,7 +35,7 @@ class SmartComponent extends ElementLite(HTMLElement) {
   connectedCallback () {
     if (super.connectedCallback) super.connectedCallback();
     this._textChanged(this.text);
-    this.querySelector('text-wrapper').addEventListener('text-wrapper-event', this._boundTextWrapperChanged)
+    this.querySelector('text-wrapper').addEventListener('text-wrapper-event', this._boundTextWrapperChanged);
     subscribe('currentRoute', this._boundRouteChanged);
     subscribe('routeParamObject', this._boundRouteParamObjectChanged);
     subscribe('list', this._boundListChanged);
@@ -43,7 +43,7 @@ class SmartComponent extends ElementLite(HTMLElement) {
 
   disconnectedCallback () {
     if (super.disconnectedCallback) super.disconnectedCallback();
-    this.querySelector('text-wrapper').removeEventListener('text-wrapper-event', this._boundTextWrapperChanged)
+    this.querySelector('text-wrapper').removeEventListener('text-wrapper-event', this._boundTextWrapperChanged);
     unsubscribe('currentRoute', this._boundRouteChanged);
     unsubscribe('routeParamObject', this._boundRouteParamObjectChanged);
     unsubscribe('list', this._boundListChanged);

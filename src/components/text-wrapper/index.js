@@ -1,4 +1,4 @@
-import { ElementLite, html } from '@littleq/element-lite/element-lite.js';
+import { ElementLite, html } from '@littleq/element-lite';
 import { template } from './template.js';
 import style from './style.styl';
 const { HTMLElement, customElements, CustomEvent } = window;

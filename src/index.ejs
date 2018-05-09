@@ -1,4 +1,4 @@
-<% const config = require('../config/app.json'); const theme = require('../config/theme.json'); %><!DOCTYPE html>
+<% const config = require('../config/app.json'); const theme = require('../config/theme.json'); const route = require('../config/route.json'); %><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -44,15 +44,10 @@
     <meta name="apple-mobile-web-app-title" content="<%= config.title %>">
 
     <!-- Homescreen icons -->
-    <% for (var i in theme.icons) { %>
-    <link rel="apple-touch-icon" <% if (theme.icons[i].sizes) { %> sizes="<%= theme.icons[i].sizes %>"<% } %> href="images/manifest/<%= theme.icons[i].src %>">
-    <% } %>
-
-    <% for (var j in theme.icons) {%>
-      <% if (theme.icons[j].tileImage) { %>
-        <meta name="msapplication-TileImage" content="images/manifest/<%= theme.icons[i].src %>">
-      <% } %>
-    <% } %>
+    <% for (let i in theme.icons) { %>
+    <link rel="apple-touch-icon" <% if (theme.icons[i].sizes) { %> sizes="<%= theme.icons[i].sizes %>"<% } %> href="images/manifest/<%= theme.icons[i].src %>"><% } %>
+    <% for (let i in theme.icons) {%><% if (theme.icons[i].tileImage) { %>
+    <meta name="msapplication-TileImage" content="images/manifest/<%= theme.icons[i].src %>"><% }} %>
     <meta name="msapplication-TileColor" content="<%= theme.webApp.themeColor %>">
     <meta name="msapplication-tap-highlight" content="<%= theme.webApp.tapHighlight %>">
 
@@ -63,17 +58,13 @@
   <body>
 
     <core-lite>
-      <router-lite>
-        <route-data-lite route="/"></route-data-lite>
-        <route-data-lite route="/page/:id"></route-data-lite>
+      <router-lite><% for (let i in route) {%>
+        <route-data-lite route="<%= route[i].route %>"></route-data-lite><% } %>
       </router-lite>
-      <template-loader-lite>
-        <template pattern="/">
-          <page-home></page-home>
-        </template>
-        <template pattern="/page/:id">
-          <page-params></page-params>
-        </template>
+      <template-loader-lite><% for (var i in route) {%>
+        <template pattern="<%= route[i].route %>">
+          <<%= route[i].page %>></<%= route[i].page %>>
+        </template><% } %>
       </template-loader-lite>
     </core-lite>
 
