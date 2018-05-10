@@ -23,3 +23,32 @@
 
   .spacer
     flex: 1
+
+  .button
+    margin-left: 20px
+
+.button
+  border: 0
+  background: none
+  cursor: pointer
+  border-radius: 50%
+  padding: 0
+
+  &:hover
+    background: #eee
+
+.icon
+  width: 24px
+  height: 24px
+
+.mobile-only
+  display: none
+
+  @media screen and (max-width: 600px)
+    display: block
+
+.not-mobile
+  display: block
+
+  @media screen and (max-width: 600px)
+    display: none

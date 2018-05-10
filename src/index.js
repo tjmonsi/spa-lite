@@ -4,6 +4,7 @@ import { updateState } from './utils/ui-state.js';
 const core = document.querySelector('core-lite');
 core.addEventListener('current-route-change', currentRouteChanged);
 core.addEventListener('route-param-object-change', routeParamObjectChanged);
+window.addEventListener('click', closeSidebar);
 
 function currentRouteChanged ({ detail: route }) {
   lazyLoad(fragments[route]);
@@ -12,6 +13,11 @@ function currentRouteChanged ({ detail: route }) {
 
 function routeParamObjectChanged ({ detail: params }) {
   updateState('routeParamObject', params);
+}
+
+function closeSidebar ({ target }) {
+  const sidebar = document.querySelector('project-sidebar');
+  if (sidebar.__open && sidebar !== target) sidebar.close();
 }
 
 async function lazyLoad (fragment) {
@@ -26,4 +32,7 @@ async function lazyLoad (fragment) {
   }
 }
 
-import('./components/project-header/index.js');
+import('./components/project-header/index.js').then(() => {
+  const header = document.querySelector('project-header');
+  header.addEventListener('click', closeSidebar);
+});
