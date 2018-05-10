@@ -1,7 +1,7 @@
 import { html } from '@littleq/element-lite';
 
 const template = (self) => html`
-  Hello
+  Yey
 `;
 
 export { template };

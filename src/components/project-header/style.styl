@@ -1,0 +1,25 @@
+@import '../../styles/general/host-block.styl'
+
+.header
+  display: flex
+  align-items: center
+  position: relative
+  height: 60px
+
+.header::before
+  position: absolute
+  right: 0px
+  bottom: -5px
+  left: 0px
+  width: 100%
+  height: 5px
+  content: ""
+  box-shadow: inset 0px 5px 6px -3px rgba(0, 0, 0, 0.4)
+
+.header
+  .title
+    margin: 0
+    padding-left: 20px
+
+  .spacer
+    flex: 1

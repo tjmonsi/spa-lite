@@ -1,5 +1,5 @@
 const fragments = {
   '/': () => import('../pages/page-home/index.js'),
-  '/page/:id': () => import('../pages/page-params/index.js')
+  'no-page': () => import('../pages/page-not-found/index.js')
 };
 export { fragments };

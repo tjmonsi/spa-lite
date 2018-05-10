@@ -22,7 +22,7 @@ async function dispatch (path, value) {
     for (let i = 0; i < fns.length; i++) {
       const fn = fns[i];
       fn(value);
-    }  
+    }
   }
 }
 

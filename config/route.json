@@ -4,7 +4,7 @@
     "page": "page-home"
   },
   {
-    "route": "/page/:id",
-    "page": "page-params"
+    "route": "no-page",
+    "page": "page-not-found"
   }
 ]

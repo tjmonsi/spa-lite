@@ -1,5 +1,4 @@
 {
   "page-home": "src/pages/page-home/index.js",
-  "page-not-found": "src/pages/page-not-found/index.js",
-  "page-params": "src/pages/page-params/index.js"
+  "page-not-found": "src/pages/page-not-found/index.js"
 }

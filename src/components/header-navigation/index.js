@@ -4,7 +4,21 @@ import style from './style.styl';
 const { HTMLElement, customElements } = window;
 
 class Page extends ElementLiteLit(HTMLElement) {
-  static get is () { return 'page-params'; }
+  static get is () { return 'header-navigation'; }
+
+  constructor () {
+    super();
+    this.__data = {};
+  }
+
+  set navigation (navigation) {
+    this.__data['navigation'] = navigation;
+    this.invalidate();
+  }
+
+  get navigation () {
+    return this.__data['navigation'];
+  }
 
   render () {
     return html`<style>${style.toString()}</style>${template(this)}`;

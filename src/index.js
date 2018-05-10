@@ -25,3 +25,5 @@ async function lazyLoad (fragment) {
     console.log(error);
   }
 }
+
+import('./components/project-header/index.js');
