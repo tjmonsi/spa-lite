@@ -241,5 +241,20 @@
         }
       })();
     </script>
+
+    <script>
+      (function(){
+        setTimeout(function(){
+          var font = document.createElement('link');
+          font.href = 'https://fonts.googleapis.com/css?family=Roboto:400,700';
+          font.rel = 'stylesheet';
+          document.head.appendChild(font);
+          document.body.classList.toggle('font-loaded')
+        })
+      })();
+    </script>
+    <noscript>
+      <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    </noscript>
   </body>
 </html>
