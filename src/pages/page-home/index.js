@@ -1,6 +1,8 @@
 import { ElementLiteLit, html } from '@littleq/element-lite';
 import { template } from './template.js';
 import style from './style.styl';
+import '../../smart-components/smart-buttons/index.js';
+import '../../components/toggle-button-list/index.js';
 const { HTMLElement, customElements } = window;
 
 class Page extends ElementLiteLit(HTMLElement) {
