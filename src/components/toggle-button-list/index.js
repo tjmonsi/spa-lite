@@ -14,19 +14,7 @@ class Page extends ElementLiteLit(HTMLElement) {
   set list (list) {
     this.__data['list'] = list;
     this.invalidate();
-    if (this.shadowRoot) {
-      const buttons = this.shadowRoot.querySelectorAll('button')
-      console.log(buttons)
-      for (let i = 0; i < buttons.length; i++) {
-        if (list[i].toggle) {
-          buttons[i].classList.add('on');
-          buttons[i].classList.remove('off');
-        } else {
-          buttons[i].classList.remove('on');
-          buttons[i].classList.add('off');
-        }
-      }  
-    }
+    
   }
 
   get list () {
@@ -39,6 +27,22 @@ class Page extends ElementLiteLit(HTMLElement) {
   
   click ({ target: el }) {
     this.dispatchEvent(new CustomEvent('toggle-button', { detail: el.id }));
+  }
+  
+  invalidate () {
+    super.invalidate();
+    if (this.shadowRoot) {
+      const buttons = this.shadowRoot.querySelectorAll('button')
+      for (let i = 0; i < buttons.length; i++) {
+        if (this.list[i].toggle) {
+          buttons[i].classList.add('on');
+          buttons[i].classList.remove('off');
+        } else {
+          buttons[i].classList.remove('on');
+          buttons[i].classList.add('off');
+        }
+      }  
+    }
   }
 }
 
